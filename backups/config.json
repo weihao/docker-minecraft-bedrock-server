@@ -1,0 +1,10 @@
+{
+    "servers": {
+        "survival": "/survival/worlds"
+    },
+    "trim": {
+        "trimDays":   7,
+        "keepDays":   30,
+        "minKeep":    10
+    }
+}

@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  # backup:
+  #   image: kaiede/minecraft-bedrock-backup
+  #   restart: unless-stopped
+  #   depends_on:
+  #     - "survival"
+  #   environment:
+  #       BACKUP_INTERVAL: "1h"
+  #       TZ: "America/New_York"
+  #   volumes:
+  #     - /var/run/docker.sock:/var/run/docker.sock
+  #     - ./backups:/backups
+  #     - ./survival:/survival
+
+  survival:
+    image: itzg/minecraft-bedrock-server
+    container_name: survival
+    restart: unless-stopped
+    environment:
+      EULA: "TRUE"
+    ports:
+      - 19135:19132/udp
+    volumes:
+      - ./survival:/data
+    stdin_open: true
+    tty: true
